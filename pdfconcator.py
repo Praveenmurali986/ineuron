@@ -68,15 +68,15 @@ class Concator(GridLayout):
                 self.listpdf.append(i)
 
         self.merger = PdfFileMerger()
-        self.no = 1
+        no = 1
 
         for pdf in self.listpdf:
             self.merger.append(pdf)
-            self.no += 1
+            no += 1
 
-        self.merger.write("result" + str(self.no) + ".pdf")
+        self.merger.write("result" + str(no) + ".pdf")
         self.merger.close()
-        self.files.text = 'successfully concated all pdf files in the current directory and saved as result.pfd'
+        self.files.text = 'successfully concated all pdf files\n  and saved in '+ self.tocwd +'\n as result'+str(no)+'.pfd'
 
 
 class Concat_PDF(App):
