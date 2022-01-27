@@ -15,32 +15,25 @@ class Concator(GridLayout):
         self.inside = GridLayout()
         self.inside.cols = 3
 
-        # first label
         self.inside.add_widget(Label(text=' Enter File Path --->'))
 
-        # first text input
         self.input = TextInput()
         self.inside.add_widget(self.input)
 
-        # first button
         self.search = Button(text='search')
         self.search.bind(on_press=self.pressed)
         self.inside.add_widget(self.search)
 
         self.add_widget(self.inside)
 
-        # second label
-        self.files = Label(text='nothing here',
+        self.files = Label(text='provide a path to see files!',
                            pos_hint={'center_x': 0.8, 'center_y': 0.2},
                            font_size='15sp',
                            halign='left',
                            valign='top',
-                           text_size=(700, None)
-
-                           )
+                           text_size=(700, None))
         self.add_widget(self.files)
 
-        # third button
         self.concatpdf = Button(text="Concat_Pdf")
         self.concatpdf.bind(on_press=self.to_one)
         self.add_widget(self.concatpdf)
